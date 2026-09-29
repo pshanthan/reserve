@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  Form,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation-form',
