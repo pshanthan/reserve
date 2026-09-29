@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Reservation } from '../models/reservation';
+import { ReservationService } from '../reservation.service';
 
 @Component({
   selector: 'app-reservation-form',
@@ -14,6 +15,7 @@ import { Reservation } from '../models/reservation';
   styleUrl: './reservation-form.component.css',
 })
 export class ReservationFormComponent {
+  constructor(private reservationService: ReservationService) {}
   reservations: Reservation[] = [];
   reservationForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -24,10 +26,7 @@ export class ReservationFormComponent {
   });
   onSubmit() {
     const r: Reservation = this.reservationForm.value as Reservation;
-    this.reservationForm.add(r);
+    this.reservationService.addReservation(r);
     this.reservationForm.reset();
-  }
-  addReservation(r: Reservation) {
-    this.reservations.push(r);
   }
 }
