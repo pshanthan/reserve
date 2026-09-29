@@ -39,7 +39,7 @@ export class ReservationFormComponent {
     }),
   });
   onSubmit() {
-    const v = this.reservationForm.value;
+    const v = this.reservationForm.getRawValue();
     const r: Reservation = {
       name: v.name,
       date: v.date,
