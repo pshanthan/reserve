@@ -7,10 +7,11 @@ import {
 } from '@angular/forms';
 import { Reservation } from '../models/reservation';
 import { ReservationService } from '../reservation.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reservation-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './reservation-form.component.html',
   styleUrl: './reservation-form.component.css',
 })
