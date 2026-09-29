@@ -7,14 +7,15 @@ import { Observable, of } from 'rxjs';
 })
 export class ReservationService {
   constructor() {}
-  reservations: Reservation[] = [];
   getReservations(): Observable<Reservation[]> {
-    return of([{
-      (name : 'Shanthan');
-      (date : '09/28/2028');
-      (time : '9:59 PM');
-      (guests : 1);
-      (phone : '6014736327');}
+    return of([
+      {
+        name: 'Shanthan',
+        date: '09/28/2028',
+        time: '9:59 PM',
+        guests: 1,
+        phone: '6014736327',
+      },
     ]);
   }
 }
