@@ -21,4 +21,9 @@ export class ReservationListComponent implements OnInit {
       .getReservations()
       .subscribe((r) => (this.reservations = r));
   }
+  cancel(id: number | undefined) {
+    if (id !== undefined) {
+      this.reservationService.cancelReservation(id);
+    }
+  }
 }
