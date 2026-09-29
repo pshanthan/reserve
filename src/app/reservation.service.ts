@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from './models/reservation';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, filter, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,12 @@ export class ReservationService {
     return this.reservationsSource.asObservable();
   }
   addReservation(r: Reservation) {
+    r.id = Date.now();
     const current = this.reservationsSource.value;
     this.reservationsSource.next([...current, r]);
+  }
+  cancelReservation(id: number) {
+    const current = this.reservationsSource.value;
+    this.reservationsSource.next(current.filter((r) => r.id !== id));
   }
 }
