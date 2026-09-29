@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reservation-list',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './reservation-list.component.html',
   styleUrl: './reservation-list.component.css',
 })
