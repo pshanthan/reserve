@@ -1,17 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref, RouterLink } from '@angular/router';
-import { ReservationListComponent } from './reservation-list/reservation-list.component';
-import { ReservationFormComponent } from './reservation-form/reservation-form.component';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    ReservationListComponent,
-    ReservationFormComponent,
-    RouterLinkWithHref,
-    RouterLink,
-  ],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
