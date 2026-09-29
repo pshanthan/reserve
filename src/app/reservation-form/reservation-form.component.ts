@@ -16,13 +16,27 @@ import { ReservationService } from '../reservation.service';
 })
 export class ReservationFormComponent {
   constructor(private reservationService: ReservationService) {}
-  reservations: Reservation[] = [];
   reservationForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    date: new FormControl('', Validators.required),
-    time: new FormControl('', Validators.required),
-    guests: new FormControl('', Validators.required),
-    phone: new FormControl('', Validators.required),
+    name: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    date: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    time: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    guests: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
+    phone: new FormControl('', {
+      nonNullable: true,
+      validators: Validators.required,
+    }),
   });
   onSubmit() {
     const r: Reservation = this.reservationForm.value as Reservation;
