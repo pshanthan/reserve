@@ -1,1 +1,7 @@
-<form></form>
+<form [formGroup]="reservationForm">
+  <input formControlName="name" />
+  <input formControlName="phone" />
+  <input formControlName="guests" />
+  <input formControlName="time" />
+  <input formControlName="date" />
+</form>
