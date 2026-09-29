@@ -14,6 +14,7 @@ import { Reservation } from '../models/reservation';
   styleUrl: './reservation-form.component.css',
 })
 export class ReservationFormComponent {
+  reservations: Reservation[] = [];
   reservationForm = new FormGroup({
     name: new FormControl('', Validators.required),
     date: new FormControl('', Validators.required),
@@ -23,5 +24,10 @@ export class ReservationFormComponent {
   });
   onSubmit() {
     const r: Reservation = this.reservationForm.value as Reservation;
+    this.reservationForm.add(r);
+    this.reservationForm.reset();
+  }
+  addReservation(r: Reservation) {
+    this.reservations.push(r);
   }
 }
