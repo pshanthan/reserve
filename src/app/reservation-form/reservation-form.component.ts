@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Reservation } from '../models/reservation';
 
 @Component({
   selector: 'app-reservation-form',
@@ -21,6 +22,6 @@ export class ReservationFormComponent {
     phone: new FormControl('', Validators.required),
   });
   onSubmit() {
-    console.log(this.reservationForm.value);
+    const r: Reservation = this.reservationForm.value as Reservation;
   }
 }
