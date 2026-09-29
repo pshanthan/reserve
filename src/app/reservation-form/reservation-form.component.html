@@ -1,7 +1,8 @@
-<form [formGroup]="reservationForm">
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <input formControlName="name" />
   <input formControlName="phone" />
   <input formControlName="guests" />
   <input formControlName="time" />
   <input formControlName="date" />
+  <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
 </form>
