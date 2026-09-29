@@ -18,6 +18,6 @@ export class ReservationListComponent implements OnInit {
   getReservations() {
     return this.reservationService
       .getReservations()
-      .subscribe<Reservation[]>((r) => (this.reservations = r));
+      .subscribe((r) => (this.reservations = r));
   }
 }
