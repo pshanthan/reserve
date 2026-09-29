@@ -4,4 +4,5 @@ export interface Reservation {
   time: string;
   guests: number;
   phone: string;
+  table: number;
 }
