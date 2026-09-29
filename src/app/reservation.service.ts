@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from './models/reservation';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,7 @@ export class ReservationService {
       phone: '6014736327',
     },
   ];
+  cofirmedReservations = new BehaviorSubject([this.reservations]);
   getReservations(): Observable<Reservation[]> {
     return of(this.reservations);
   }
