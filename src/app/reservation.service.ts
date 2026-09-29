@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from './models/reservation';
-import { BehaviorSubject, filter, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +9,7 @@ export class ReservationService {
   constructor() {}
   private reservationsSource = new BehaviorSubject<Reservation[]>([
     {
+      id: 1,
       name: 'Shanthan',
       date: '09/28/2028',
       time: '9:59 PM',
