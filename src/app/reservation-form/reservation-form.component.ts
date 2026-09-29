@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-reservation-form',
@@ -9,10 +14,10 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 })
 export class ReservationFormComponent {
   reservationForm = new FormGroup({
-    name: new FormControl(),
-    date: new FormControl(),
-    time: new FormControl(),
-    guests: new FormControl(),
-    phone: new FormControl(),
+    name: new FormControl('', Validators.required),
+    date: new FormControl('', Validators.required),
+    time: new FormControl('', Validators.required),
+    guests: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
   });
 }
