@@ -1,1 +1,5 @@
-<p>reservation-list works!</p>
+<div *ngFor="let r of reservations">
+  <div>{{ r.name }} - {{ r.phone }} - {{ r.time }}</div>
+  <div>Guests : {{ r.guests }}</div>
+  <div>{{ r.table }} - {{ r.time }}</div>
+</div>
