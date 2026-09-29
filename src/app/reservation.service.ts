@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class RegistrationService {
+export class ReservationService {
   constructor() {}
   reservations: Reservation[] = [];
   getReservations(): Observable<Reservation[]> {
