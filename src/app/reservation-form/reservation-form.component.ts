@@ -39,7 +39,14 @@ export class ReservationFormComponent {
     }),
   });
   onSubmit() {
-    const r: Reservation = this.reservationForm.value as Reservation;
+    const v = this.reservationForm.value;
+    const r: Reservation = {
+      name: v.name,
+      date: v.date,
+      time: v.time,
+      guests: Number(v.guests),
+      phone: v.phone,
+    };
     this.reservationService.addReservation(r);
     this.reservationForm.reset();
   }
