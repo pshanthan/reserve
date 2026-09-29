@@ -16,7 +16,7 @@
       reservationForm.get('phone')?.touched
     "
   >
-    Name is Required
+    phone is Required
   </div>
   <input formControlName="guests" />
   <div
@@ -25,7 +25,7 @@
       reservationForm.get('guests')?.touched
     "
   >
-    Name is Required
+    guests is Required
   </div>
   <input formControlName="time" />
   <div
@@ -34,7 +34,7 @@
       reservationForm.get('time')?.touched
     "
   >
-    Name is Required
+    time is Required
   </div>
   <input formControlName="date" />
   <div
@@ -43,7 +43,7 @@
       reservationForm.get('date')?.touched
     "
   >
-    Name is Required
+    date is Required
   </div>
   <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
 </form>
