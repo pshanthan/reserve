@@ -20,4 +20,7 @@ export class ReservationFormComponent {
     guests: new FormControl('', Validators.required),
     phone: new FormControl('', Validators.required),
   });
+  onSubmit() {
+    console.log(this.reservationForm.value);
+  }
 }
