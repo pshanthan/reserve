@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Reservation } from './models/reservation';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReservationService {
   constructor() {}
-  private reservations: Reservation[] = [];
   private reservationsSource = new BehaviorSubject<Reservation[]>([
     {
       name: 'Shanthan',
@@ -18,9 +17,10 @@ export class ReservationService {
     },
   ]);
   getReservations(): Observable<Reservation[]> {
-    return of(this.reservations);
+    return this.reservationsSource.asObservable();
   }
   addReservation(r: Reservation) {
-    this.reservations.push(r);
+    const current = this.reservationsSource.value;
+    this.reservationsSource.next([...current, r]);
   }
 }
