@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ReservationService } from '../reservation.service';
 import { Reservation } from '../models/reservation';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reservation-list',
