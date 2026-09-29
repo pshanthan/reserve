@@ -1,8 +1,49 @@
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
   <input formControlName="name" />
+  <div
+    *ngIf="
+      reservationForm.get('name')?.invalid &&
+      reservationForm.get('name')?.touched
+    "
+  >
+    Name is Required
+  </div>
+
   <input formControlName="phone" />
+  <div
+    *ngIf="
+      reservationForm.get('phone')?.invalid &&
+      reservationForm.get('phone')?.touched
+    "
+  >
+    Name is Required
+  </div>
   <input formControlName="guests" />
+  <div
+    *ngIf="
+      reservationForm.get('guests')?.invalid &&
+      reservationForm.get('guests')?.touched
+    "
+  >
+    Name is Required
+  </div>
   <input formControlName="time" />
+  <div
+    *ngIf="
+      reservationForm.get('time')?.invalid &&
+      reservationForm.get('time')?.touched
+    "
+  >
+    Name is Required
+  </div>
   <input formControlName="date" />
+  <div
+    *ngIf="
+      reservationForm.get('date')?.invalid &&
+      reservationForm.get('date')?.touched
+    "
+  >
+    Name is Required
+  </div>
   <button type="submit" [disabled]="reservationForm.invalid">Submit</button>
 </form>
