@@ -9,12 +9,12 @@ export class ReservationService {
   constructor() {}
   reservations: Reservation[] = [];
   getReservations(): Observable<Reservation[]> {
-    return of([
+    return of([{
       (name : 'Shanthan');
       (date : '09/28/2028');
       (time : '9:59 PM');
       (guests : 1);
-      (phone : '6014736327');
+      (phone : '6014736327');}
     ]);
   }
 }
