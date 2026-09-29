@@ -7,16 +7,14 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class ReservationService {
   constructor() {}
-  private reservations: Reservation[] = [
-    {
-      name: 'Shanthan',
-      date: '09/28/2028',
-      time: '9:59 PM',
-      guests: 1,
-      phone: '6014736327',
-    },
-  ];
-  cofirmedReservations = new BehaviorSubject([this.reservations]);
+  private reservations: Reservation[] = [];
+  private reservationsSource = new BehaviorSubject<Reservation[]>({
+    name: 'Shanthan',
+    date: '09/28/2028',
+    time: '9:59 PM',
+    guests: 1,
+    phone: '6014736327',
+  });
   getReservations(): Observable<Reservation[]> {
     return of(this.reservations);
   }
